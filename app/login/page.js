@@ -1,9 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import Button from "../components/button";
 import Input from "../components/textInput";
-import Link from "next/link";
 
 const Login = () => {
   // const [loginData, setLoginData] = useState({
@@ -20,6 +20,7 @@ const Login = () => {
   //     }
   //   })
   // };
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -51,7 +52,9 @@ const Login = () => {
       setLoading(false);
       if (!res.ok) {
         throw Error(loginState.error);
-      }
+      }  
+      localStorage.setItem("user", JSON.stringify(loginState));
+
       setSuccess("Logged in successfully")
     } catch (error) {
       setLoading(false);
