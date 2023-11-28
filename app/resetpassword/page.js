@@ -21,7 +21,7 @@ const ResetPassword = () => {
                 <label htmlFor="resetPassword">Enter the code you received </label>
                 <div className="flex justify-center gap-5">
                     {Array(4).fill("").map((e, index) => (
-                        <input className="w-10 text-center p-2 text-sm border-2 rounded border-[#3FC2A3]" placeholder="-" name="resetPassword" />
+                        <input key={index} className="w-10 text-center p-2 text-sm border-2 rounded border-[#3FC2A3]" placeholder="-" name="resetPassword" />
                     ))}
                 </div>
             </form>
